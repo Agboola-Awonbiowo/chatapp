@@ -1,4 +1,5 @@
 import LoginScreen from './screens/LoginScreen';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

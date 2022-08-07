@@ -1,14 +1,19 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 function LoginScreen() {
+  
   return (
-    <form>
+    <form className="d-flex align-items-center justify-content-center vh-100">
       <div>
-        <input type="text" placeholder="Enter Username" />
+        <div>
+          <input type="text" className='p-2' placeholder="Enter Username" />
+        </div>
+        <Button variant="primary" className="btn-primary w-100 mt-3">
+          Submit
+        </Button>
       </div>
-      <button>Submit</button>
     </form>
   );
 }
-
 export default LoginScreen;
