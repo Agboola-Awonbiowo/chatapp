@@ -4,7 +4,7 @@ function LoginScreen() {
   return (
     <form>
       <div>
-        <input type="text" placeholder="Enter Username" />
+        <input type="text"  placeholder="Enter Username" />
       </div>
       <button>Submit</button>
     </form>
