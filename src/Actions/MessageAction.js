@@ -12,12 +12,6 @@ export const loadStorageMessages = (data) => {
     };
 };
 
-export const cleanState = () => {
-    return (dispatch) => {
-        const cleanItems = [];
-        dispatch(message(cleanItems))
-    }
-}
 
 export const sendMessage = (msg, user, uid) => {
     return (dispatch) => {
