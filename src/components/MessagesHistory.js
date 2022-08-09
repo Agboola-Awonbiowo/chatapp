@@ -32,6 +32,7 @@ function MessageHistory() {
             key={index}
             isOwn={message.name === nickname}
             sender={message.name}
+            time={message.time}
           >
             {message.text}
           </Message>
