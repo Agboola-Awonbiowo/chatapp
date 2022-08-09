@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import ChatScreen from './ChatScreen';
+import { useDispatch } from 'react-redux';
+import {v4 as uuid} from 'uuid'
+import { login } from '../Actions/LoginAction';
 
 function LoginScreen() {
-  const [userName, setUserName] = useState('');
-  const handleSubmit = () => {
-    if (localStorage.setItem('name', userName)) {
-      return <ChatScreen />;
-    }
+  const [username, setUsername] = useState({ value: '' });
+  const dispatch = useDispatch();
+  const handleChange = (event) => {
+    setUsername({ value: event.target.value });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const uid = uuid();
+    dispatch(login(username.value, uid));
   };
   return (
     <form
@@ -18,15 +24,15 @@ function LoginScreen() {
         <div>
           <input
             type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
+            value={username.value}
+            onChange={handleChange}
             className="p-2"
             placeholder="Enter Username"
           />
         </div>
         <Button
           variant="primary"
-          disabled={!userName}
+          disabled={!username}
           className="btn-primary w-100 mt-3"
           type="submit"
         >
